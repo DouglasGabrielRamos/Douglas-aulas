@@ -1,0 +1,18 @@
+// comando para instalar type script (npm install -g  typescript)
+//"a grande diferença do type script pro java script é que no java script wa gente coloca o tipo de tudo"
+
+//para rodar o projeto é necesario primeiro transpilar o código para javasscript(npx tsc arquivo.ts). outro código em javascript (node arquivoscript.js)
+
+let nome: string = "Douglas"
+let idade: number = 16
+let souEstudante: boolean = true
+console.log(`Meu nome é ${nome}, tenho ${idade}  e eu sou um estudante? ${souEstudante}` )
+// crie uma função que pede nome, idade, e se tem carteiras de identidade
+
+// readline-sync
+
+let nome1: string = "Douglas"
+let idade1: number = 15
+let temCarteira:boolean = false
+
+    console.log(`Meu nome é ${nome1}, tenho ${idade1} anos, e eu sou estudante${souEstudante}`)
