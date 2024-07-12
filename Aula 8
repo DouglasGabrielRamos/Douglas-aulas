@@ -1,0 +1,194 @@
+class Carro {
+    private velocidade:number
+    private  nome:string;
+    private  tipo:string;
+    private  peso:number;
+
+    constructor(carroNome:string, carroTipo: string,carroPeso: number,carroVelocidade:number,) {
+        this.nome = carroNome;
+        this.tipo = carroTipo;
+        this.peso = carroPeso;
+        this.velocidade = carroVelocidade;
+
+    }
+
+
+
+
+    Tanquecheio():void {
+        console.log(`O ${this.nome} está com tanque cheio`);
+        
+    }
+
+    getvelocidade():number {
+        return this.velocidade
+        
+        }
+     setvelocidade(novavelocidade:number):void{
+        if (this.velocidade > 0){
+            this.velocidade = novavelocidade
+            } else {
+                console.log(`O veiculo não pode ser ligado`)
+     }
+    }
+    tanqueVazio():void {
+        console.log(`O ${this.nome} está com tanque vazio`);
+    }
+
+}
+let meuCarro = new Carro('toyota', 'sport', 124, 2)
+let meuOutrocCarro = new Carro('bww', 'sport', 127, 2)
+
+let minhaMoto = new Carro('honda', 'sport', 125, 120,) 
+let minhaOutraMoto = new Carro('kawasaki', 'Ninja', 150, 2)
+
+
+meuCarro.Tanquecheio()//
+minhaMoto.getvelocidade()//
+const carro = new Carro('Camaro', 'sport', 187, 100 )
+console.log(carro.getvelocidade())//100
+carro.setvelocidade(150)
+console.log(carro.getvelocidade())//
+
+export class Animal {
+    name: string;
+    weight: number;
+    breed: string;
+
+    constructor(name:string, weight:number, breed:string,){
+        this.name = name;
+        this.weight = weight;
+        this.breed = breed;
+    }
+    
+    eat(quantity: number):void{
+        console.log(`The animal has eating `  + quantity);
+    }
+
+    sleep():void{
+        console.log(`The animal has sleeping`)
+    }
+
+}
+
+export class Dog extends Animal {
+
+
+
+    constructor(name:string, weight:number,breed:string) {
+        // usado para invocar a construction do pai
+        super(name, weight, breed);
+        
+        
+    }
+    
+    Bark(): void {
+        console.log('au au au');
+    }
+}
+const myDog = new Dog("Nala", 15,'vira lata')
+
+console.log(myDog.name)
+console.log(myDog.weight)
+myDog.eat(10)
+myDog.Bark()
+
+export class Owl extends Animal {
+    featherColor:string
+    constructor(name:string, weight:number, breed:string, featherColor:string,) {
+        super(name, weight, breed)      
+        this.featherColor = this.featherColor 
+    }
+       
+ fly():void{
+    console.log(`The owl is flying`)
+ }
+}
+const myOwl = new Owl('Meive', 30, 'Caburé', 'browl')
+
+console.log(myOwl.name)
+console.log(myOwl.weight)
+console.log(myOwl.breed)
+console.log(myOwl.featherColor)
+myOwl.eat(12)
+myOwl.fly()
+
+// Exercicio classes de pai e filho
+
+export class Daddy {
+    name:string
+    weight:number
+    height:number
+    age:number
+
+
+    constructor(name:string, weight:number, height:number, age:number){
+        this.name = name;
+        this.weight = weight;
+        this.height = height;
+        this.age = age;
+    }
+    eat(quantity: number):void{
+        console.log(`The animal has eating `  + quantity);
+    }
+
+    sleep():void{
+        console.log(`The animal has sleeping`)
+    }
+    
+    
+}
+const myDaddy = new Daddy('Douglas', 90, 176, 39)
+console.log(myDaddy.name)
+console.log(myDaddy.weight)
+console.log(myDaddy.height)
+console.log(myDaddy.age)
+myDaddy.eat(5)
+myDaddy.sleep()
+
+
+
+export class Son extends Daddy {
+
+
+    constructor(name:string, weight:number, height:number, age:number){
+        super(name, weight, height, age)
+    }
+    
+
+    plsMoney(quantity: number):void{
+        console.log(`Give me money `  + quantity);
+    }
+    }
+    const mySon = new Son('Gabriel', 60, 173, 15)
+console.log(mySon.name)
+console.log(mySon.weight)
+console.log(mySon.height)
+console.log(mySon.age)
+mySon.eat(7)
+mySon.sleep()
+mySon.plsMoney(100)
+
+    export class Grandchild extends Son {
+
+        constructor(name:string, weight:number, height:number, age:number){
+            super(name, weight, height, age,)
+        }
+        chorar():void{
+            console.log(`buah buah`)
+        }
+    } 
+    const myGrandChild = new Grandchild(`Aryiel`, 5, 60, 1)
+    console.log(myGrandChild.name);
+    console.log(myGrandChild.weight);
+    console.log(myGrandChild.height);
+    console.log(myGrandChild.age)
+    myGrandChild.eat(2)
+    myGrandChild.sleep()
+    myGrandChild.plsMoney(2)
+    myGrandChild.chorar()
+
+
+    const messi = 'bola de ouro'
+console.log(`Messi com 1 gol na temporada:`, messi)
+    
