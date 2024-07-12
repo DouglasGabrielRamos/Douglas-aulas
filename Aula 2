@@ -1,0 +1,144 @@
+// ReadlineSync
+//  npm installl readline-sync
+const readlineSync = require(`readline-sync`)//
+const num1 = Number(readlineSync.question(`amira`))
+const num2 = Number(readlineSync.question(`aaaa `))
+//console.log(num1 + num2)
+
+
+ 
+
+//  Operadores aritimeticos
+// soma +
+// Subtraçao -
+// Multiplicaçâo *
+// divisâo /
+
+//faça 3 perguntas ao usario, pedindo 3 notas
+//calculem a media destas notas.
+
+//10 + 5 + 10 e divide por 5 calculando media
+
+
+const num3 = Number(readlineSync.question(`insira uma nota`))
+const num4 = Number(readlineSync.question(`insira uma nota`))
+const num5 = Number(readlineSync.question(`insira uma nota`))
+
+const media = (num3 + num4 + num5) /3
+
+console.log(`sua nota é`, media)
+
+//comparadores
+// maior ou igual >=
+// menor <
+// menor ou igual
+
+const valor1 = 5
+const valor2 = 10
+
+console.log(valor1 === valor2) //false
+console.log(valor1 !== valor2) //true
+console.log(valor1 > valor2) //false
+console.log(valor1 >= valor2) //false
+console.log(valor1 < valor2) //true
+console.log(valor1 <= valor2) //true
+
+// Peça para o usuàrio inserir dois numeros.  compara estes numeros, e verifique se o primeiro numero é maior, menor, igual, etc do que o segundo.
+
+const num6 = Number(readlineSync.question(`insira um numero`))
+const num7 = Number(readlineSync.question(`insira um uúmero`))
+
+console.log( `${num6} é igual a ${num7}?`, num6 === num7)
+console.log( `${num6} é diferente a ${num7}?`, num6 !== num7)
+console.log( `${num6} é maior a ${num7}?`, num6 > num7)
+console.log( `${num6} é maior ou igual a ${num7}?`, num6 >= num7)
+console.log( `${num6} é menor a ${num7}?`, num6 < num7)
+console.log( `${num6} é menor ou igual a ${num7}?`, num6 <= num7)
+
+// .lenght
+const meunome = "Douglas Gabriel Ramos"
+console.log(meunome.length)//17
+
+//charAT()
+console.log(`Douglas`.charAt(0))//n
+
+// indexOF()
+console.log(`Douglas`.indexOf('o'))//2
+
+//toUpperCase() e toLowerCase()
+
+console.log(`Douglas`.toUpperCase) //DOUGLAS
+console.log(`DOUGLAS`.toLowerCase) // douglas
+
+// slice()
+let frase = "Mergulhando em tecnologia"
+console.log(frase.slice(0,11)) //Mergulhando
+
+// replace()
+
+let comunicacao = "Olá, sr, nomeusuario!.";
+console.log(comunicacao.replace("nomeusuario", "Douglas")); // Olá Douglas
+
+
+
+//concat()
+let novaString = "Programe nas principais linguagens e plataformas: ";
+console.log(novaString.concat("JavaScript,").concat(" Python,").concat(" e C#."))
+//Programe nas principais linguagens e plataformas: javascript, python, e c#
+
+//split()
+let linguagens = "JavaScript;Java;C#;PHP;Python;Go;Vb;SQL;C;C++";
+let arrayLinguagens = linguagens.split(";");
+console.log(arrayLinguagens) // [JavasScript,Java,C#]
+
+//trim()
+let login = "      leo@emailteste.com     ";
+let loginSemEspaco = login.trim();
+console.log(loginSemEspaco); //leo@emailteste.com
+
+const valor3 = true
+const valor4 = false
+const valor5 = true
+
+// verifica se o valor 3 e o 4 são true
+// se um deles for false, o resultado é false
+console.log(valor3 && valor4 && valor5 ) //false
+
+// verifica se o valor3 ou 4 valer  são true
+// se um deles for true, o resultado é true
+console.log(valor3 || valor4 || valor5 ) //true
+
+const valor6 = 3 < 14 //true
+const valor7 = 6 > 29 //false
+const valor8 = 3 <- 1 //false
+
+console.log(valor6 && valor7 && valor8)
+
+const listadecompras = ["carne", "leite", "pão"]
+console.log(listadecompras[0]) //carne
+console.log(listadecompras[1]) //leite
+console.log(listadecompras[2]) //pão
+
+
+const racadecao = ["Shih Tzu","Rottweiler","Pug.","Golden Retriever", "Pastor Alemão."]
+
+const indice = Number(readlineSync.question(`Insira um numero de 0 a 4`))
+
+const cachorroescolhido = cachorro[indice]
+
+console.log("Você escolheu o cachorro da raça" `${cachorroescolhido}`)
+
+
+// Ter 18 ou mais
+// Ter uma carteira de motorista
+// ter um carro
+
+//if. um inglês quer dizerr
+
+const idade = 18
+const temCarteira = true
+const temCarro = true
+
+if (18 && temCarteira === true && temCarro === true) {
+    console.log("Você pode dirigir")
+}
