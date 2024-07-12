@@ -1,0 +1,132 @@
+// npx tsc (nome do arquivo)
+//  string
+let nome:string = "Douglas"
+// number
+let numero:Number = 15
+
+// bolean 
+let gameOver:Boolean = true
+
+// Array 
+
+
+let array:Number [ ] = [1,2,3,4,]
+
+// function
+
+function soma(num1:number, num2:number):number{
+    return num1  + num2
+}
+function frase1(nome?:string):void {
+    console.log(`Hello`, nome || `world`)
+    
+}
+
+frase1(`Maria`)
+function frase2(nome:string):string {
+    return `Olá ${nome}, tudo bem?`
+}
+function chamaAlgo(nome:string):void {
+    console.log(`E ai ${nome}`)
+    
+}
+
+
+
+function desconto(preco:number, desconto:number = 0.05):number {
+    return preco * (1 - desconto)
+}
+console.log(desconto(5))
+
+function frase3(nome:string =  `João`, idade:number = 40):void {
+    console.log(`OLá ${nome}, você tem ${idade} anos.`)
+}
+
+// Estou criando um molde para o tipo de cachorro
+// Classse e constructor
+
+
+class Cachorro {
+    nome:string
+    peso:number
+    pelagem:string
+    raca:string
+
+    constructor(dogNome:string,dogPeso:number,dogPelagem:string){
+        this.nome = dogNome
+        this.peso = dogPeso
+        this.pelagem = dogPelagem
+        this.raca = `golden`
+    }
+
+    latir():void{
+        console.log(`${this.nome} está latindo`)
+    }
+
+    correr():void{
+        console.log(`${this.nome}está correndo`)
+    }
+
+    comer():void {
+        console.log(`${this.nome} está comendo`)
+    }
+}
+// instanciando dois objetos
+const meuCachorro:Cachorro = new Cachorro('Nala',13,'Amarela')
+const meuOutroCachorro:Cachorro = new Cachorro('margot',10,'preta')
+
+//assim chammamo um atributo
+console.log(meuCachorro.nome) //Nala
+
+// assim chamamos um metodo
+meuCachorro.latir() // auau
+meuOutroCachorro.latir()
+
+// crie uma classe coruja
+// 3 atributos
+// 3 metodos
+// não esquece do construction
+// depois que criar a classe, instancie dois objetos corujas e chame os métodos
+
+class Coruja {
+    // atributos
+    nome: string
+    peso: number
+    pelagem: string
+    
+
+
+
+    // constructor
+    constructor(owlNome:string, owlPeso:number,owlPelagem:string) {
+        this.nome = owlNome
+        this.peso = owlPeso
+        this.pelagem = owlPelagem
+
+    }
+
+    // métodos
+
+    vigiar():void{
+        console.log(`A ${this.nome} está vigiando`)
+    }
+
+    comer():void{
+        console.log(`A ${this.nome} está comendo`)
+    }
+
+    dormir():void{
+        console.log(`A ${this.nome} está dormindo`)
+    }
+}
+
+
+// instancie os objetos
+const minhaCoruja:Coruja = new Coruja('Meive', 573, 'Preta');
+const minhaOutraCoruja:Coruja = new Coruja('Megan', 330, 'Marrom')
+
+// cham dois métodos
+
+minhaCoruja.comer()
+minhaOutraCoruja.dormir()
+minhaCoruja.vigiar()
