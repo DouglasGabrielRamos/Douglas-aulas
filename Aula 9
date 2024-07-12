@@ -1,0 +1,157 @@
+export class Person {
+    protected children: number;// Está protegida isso quer dizer que só pode ser acessada dentro dessa classe ou das classes fihas
+
+    constructor(children:number) {
+        this.children = children
+        
+    }
+
+    protected howManyChildren():void{
+        console.log(`This person has ${this.children} children.`)
+    }
+}
+
+export class Father extends Person{
+   
+    falar():void {
+        console.log(`This is the Father.`)
+        this.howManyChildren;//Pode acessar membros protected da classe pai
+    }
+ 
+}
+
+// public // pode ser chamado de qualquer lugar
+// protected // pode ser chamado somente dentro das classes pai e filhos
+// private // pode ser chamado só com setters e getters
+
+const meuPai: Father = new Father(3)
+meuPai.falar()
+
+// não é possivel chamar um método protected fora da classe
+
+// pai.howManyChildren() // não pode acessar fora da classe//
+
+// qualquer interface que usar a interface car usará todos esses atributos
+export interface Car {
+    model: string;
+    year: number;
+    startEngine(): void;
+    stopEngine?():void;
+}
+
+export class Toyota implements Car { 
+    model: string;
+    year: number;
+    constructor(model:string, year:number,){
+     this.model = model
+     this.year = year
+    }
+    startEngine(): void {
+        console.log(`The car model ${this.model} is on`)
+    }
+
+}
+
+// CRIE UMA INTERFACE CHAMADA PRODUTOS QUE TENHA ATRIBUYOS TIPO PREÇO, NOME E PESO E UM MÉTODO
+export interface Produtos {
+    price:number;
+    name: string;
+    weight: number;
+    startEngine(): void;
+    
+}
+
+
+
+// CRIEM 3 CLASSES QUE UTILIZAM ESSA INTERFACE E CRIE UM MÉTODO DIFERENTE PARA CADA PRODUTO
+export class Alimento implements Produtos { 
+    price:number;
+    name: string;
+    weight: number;
+    constructor(price:number, name:string, weight:number){
+     this.price = price
+     this.name = name
+     this.weight = weight
+    }
+    startEngine(): void {
+        console.log(`The ${this.name} is am loja`)
+    }
+
+    comprarProduto(quantity: number):void{
+        console.log(`you purchased this product ${this.name}` + quantity);
+    }
+
+    eat(quantity: number):void{
+        console.log(`The animal has eating `  + quantity);
+    }
+}
+
+export class Eletronico implements Produtos { 
+    price:number;
+    name: string;
+    weight: number;
+    constructor(price:number, name:string, weight:number){
+     this.price = price
+     this.name = name
+     this.weight = weight
+    }
+    startEngine(): void {
+        console.log(`The ${this.name} is am loja`)
+    }
+    
+    ligarEletronico():void{
+        console.log(`connect electronic ${this.name}`)
+    }
+    comprarProduto(quantity: number):void{
+        console.log(`you purchased this product ${this.name}` + quantity);
+    }
+}
+
+export class Eletrodomestico implements Produtos { 
+    price:number;
+    name: string;
+    weight: number;
+    constructor(price:number, name:string, weight:number){
+     this.price = price
+     this.name = name
+     this.weight = weight
+    }
+    startEngine(): void {
+        console.log(`The ${this.name} is am loja`)
+    }
+
+    usarEletrodimestico():void{
+        console.log(`Open is ${this.name}`)
+    }
+
+    comprarProduto(quantity: number):void{
+        console.log(`you purchased this product ${this.name}` + quantity);
+    }
+}
+
+// INSTANCIE CADA CLASSE
+
+const myAlimento: Alimento = new Alimento(3,`Morango`, 1,)
+console.log(myAlimento.price)
+console.log(myAlimento.name)
+console.log(myAlimento.weight)
+myAlimento.eat(5)
+myAlimento.comprarProduto(2)
+myAlimento.startEngine()
+
+const myEletronico: Eletronico = new Eletronico(1000, `Tv`, 60)
+console.log(myEletronico.price)
+console.log(myEletronico.name)
+console.log(myEletronico.weight)
+myEletronico.ligarEletronico()
+myEletronico.comprarProduto(1)
+myEletronico.startEngine()
+
+const myEletroDomestico: Eletrodomestico = new Eletrodomestico(4000, `Geladeira`, 100 )
+console.log(myEletroDomestico.price)
+console.log(myEletroDomestico.name)
+console.log(myEletroDomestico.weight)
+myEletroDomestico.usarEletrodimestico()
+myEletroDomestico.comprarProduto(1)
+myEletroDomestico.startEngine()
+
