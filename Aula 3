@@ -1,0 +1,179 @@
+// 1 .Número Positivo ou Negativo: Solicite um número do usuário e, em seguida, determine se o número é positivo, negativo ou igual a zero. Exiba a mensagem correspondente.
+
+let leitor = require(`readline-sync`)
+
+
+
+
+
+
+if (Number > 0) {
+    console.log(`O valor  ${Number} é positivo`);
+} else if (Number < 0) {
+        console.log(`O valor ${Number} é negativo`)
+    } else if(Number == 0) {
+     console.log(`O valor ${Number} é zero`)
+ } else {
+     console.log(`valor é inexistante`)
+ }
+ 
+
+
+
+// 2. Login Simples: Crie uma variável com uma senha (por exemplo, "1234"). Solicite ao usuário que insira uma senha e verifique se a senha inserida corresponde à senha armazenada. Exiba uma mensagem de "Login bem-sucedido" ou "Senha incorreta".
+ 
+
+ let senha = leitor.question(`insira a senha correta`)
+ let senhaCorreta = "1234"
+
+ if (senha == senhaCorreta) {
+    console.log(`Login bem sucedido`)
+ }  else {
+    console.log(`Senha incorreta.`)
+  }
+ 
+
+
+// 3. Calculadora Básica: Solicite ao usuário dois números e uma operação (por exemplo, +, -, *, /). Use if e else para executar a operação escolhida e exibir o resultado.
+ 
+
+let valorum = leitor.questionInt(`insira o segundo valor`)
+let valordois = leitor.questionInt(`Insira o segundo valor`)
+let operacao = leitor.question("digite o simbolo da operação desejada +,-, *, /")
+
+if (operacao == "+") {
+    console.log(`A soma é ${valorum + valordois}`)
+} else if (operacao == "-") {
+    console.log(`A subtração é  ${valorum - valordois}`);
+}else if (operacao == "*") {
+    console.log(`A multiplicação é ${valorum * valordois}`);
+} else if (operacao == "/") {
+    console.log(`A divisão é, ${valorum / valordois}`);
+} else {
+    console.log(`Operação inexistente, tente novamente`);
+}
+
+
+// 4. Maior de Três Números: Peça ao usuário para inserir três números e use if e else para determinar qual é o maior dos três. Em seguida, exiba o número maior.
+
+
+
+let v1 = leitor.questionFloat(`Ensira o primeiro valor`)
+let v2 = leitor.questionFloat(`Ensira o segundo valor`)
+let v3 = leitor.questionFloat(`Ensira o terceiro valor`)
+
+if (v1 > v2 && v1 > v3) {
+    console.log(`O ${v1} é o maior número`)
+} else  if (v2 > v1 && v2 > v3 ) {
+    console.log(`O ${v2} è o maior número`);
+} else if (v3 > v1 && v3 > v2) {
+    console.log(`O ${v3} é o maior número`)
+} else {
+    console.log(`Os valores são iguais ou incorretos.`);
+}{
+    }
+
+// funções, switch case, etc.
+let enquanto = true
+
+while(enquanto){
+    let opt = leitor.questionInt(`
+        Digite o numero da opcao desejada:
+        1 - Positivo ou Negativo
+        2 - Senha Correta
+        3 - Calculadora Básica
+        4 - Maior dos Tres
+        0 - Sair
+        Digite: `)
+
+    switch(opt){
+        case 1:
+            let valorPositivoOuNegativo = leitor.questionInt("Insira um valor numérico: ")
+            positivoOuNegativo(number)
+            break
+        case 2:
+            let senha = leitor.question("Insira a senha correta: ")
+            senhaCorreta(senha)
+            break
+        case 3:
+            let valorUm = leitor.questionInt('Insira o primeiro valor: ')
+            let valorDois = leitor.questionInt('Insira o segundo valor: ')
+            calculadora(valorUm, valorDois)
+            break
+        case 4:
+            let v1 = leitor.questionFloat("Insira o primeiro valor: ")
+            let v2 = leitor.questionFloat("Insira o segundo valor: ")
+            let v3 = leitor.questionFloat("Insira o terceiro valor: ")
+            maiorDosTres(v1, v2, v3)
+            break
+        case 0:
+            console.log("Saindo...")
+            process.exit(0)
+    }
+
+}
+
+//função da atividade 1
+function positivoOuNegativo(number){
+    if(number > 0){
+        console.log(`O valor ${number} é positivo`)
+    } else if (number < 0) {
+        console.log(`O valor ${number} é negativo`)
+    } else if (number == 0) {
+        console.log(`O valor ${number} é zero`)
+    } else {
+        console.log("Valor inexistente")
+    }
+
+    return number
+}
+
+//função da atividade 2
+function senhaCorreta(senha){
+    let senhaCorreta = "1234"
+
+    if (senha == senhaCorreta){
+        console.log("Login bem-sucedido")
+    } else {
+        console.log("Senha incorreta")
+    }
+}
+
+//função da atividade 3
+function calculadora(valorUm, valorDois){
+    let operacao = leitor.question("Digite o simbolo da operação desejada: +, -, *, /: ")
+
+    if(operacao == "+"){
+        console.log(`A soma é ${valorUm + valorDois}`);
+    } else if(operacao == "-"){
+        console.log(`A subtração é ${valorUm - valorDois}`)
+    } else if(operacao == "*"){
+        console.log(`A multiplicação é ${valorUm * valorDois}`)
+    } else if(operacao == "/"){
+        console.log(`A divisão é ${valorUm / valorDois}`)
+    } else {
+        console.log(`Operação inexistente, tente novamente`)
+    }
+}
+
+//função da atividade 4
+function maiorDosTres(v1, v2, v3){
+    if(v1 > v2 && v1 > v3){
+        console.log(`O ${v1} é o maior número`)
+    } else if(v2 > v1 && v2 > v3){
+        console.log(`O ${v2} é o maior número`)
+    } else if(v3 > v1 && v3 > v2){
+        console.log(`O ${v3} é o maior número`)
+    } else {
+        console.log(`Os valores são iguais ou incorretos`)
+    }
+}
+
+
+    //  5. Escreva um programa que conte de 1 a 10 e, para cada número, exiba o resultado da multiplicação desse número por 5. 
+
+
+    // 6.  Crie um programa que gere a tabela de multiplicação de um número específico fornecido pelo usuário, indo de 1 a 10.
+    
+   // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/for
+    
